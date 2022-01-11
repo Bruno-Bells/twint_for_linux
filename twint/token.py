@@ -9,7 +9,6 @@ class TokenExpiryException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
 
-        
 class RefreshTokenException(Exception):
     def __init__(self, msg):
         super().__init__(msg)
@@ -18,7 +17,8 @@ class RefreshTokenException(Exception):
 class Token:
     def __init__(self, config):
         self._session = requests.Session()
-        self._session.headers.update({'User-Agent': 'Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0'})
+#         self._session.headers.update({'User-Agent': 'Mozilla/5.0 (X11; Linux ppc64le; rv:75.0) Gecko/20100101 Firefox/75.0'})
+        self._session.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0'})
         self.config = config
         self._retries = 5
         self._timeout = 10
